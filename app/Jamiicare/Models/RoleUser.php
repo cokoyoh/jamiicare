@@ -3,7 +3,6 @@
 namespace Jamiicare\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Jamiicare\User;
 
 class RoleUser extends Model
 {

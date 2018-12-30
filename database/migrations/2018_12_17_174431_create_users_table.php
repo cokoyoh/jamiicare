@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration {
 			$table->string('lastname', 100)->nullable();
 			$table->string('email')->nullable();
 			$table->string('password', 255)->nullable();
-			$table->string('remeber_token')->nullable();
+			$table->string('remember_token')->nullable();
 			$table->dateTime('email_verified_at')->nullable();
 			$table->timestamps();
 			$table->softDeletes();

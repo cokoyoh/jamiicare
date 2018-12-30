@@ -1,12 +1,10 @@
 <?php
 
-namespace Jamiicare;
+namespace Jamiicare\Models;
 
-use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Jamiicare\Models\Role;
-use Jamiicare\Models\RoleUser;
+use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -32,7 +30,7 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function roles()
     {
-        return $this->hasMany(Role::class);
+        return $this->belongsToMany(Role::class)->withTimestamps();
     }
 
     public function roleUser()
