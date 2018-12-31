@@ -165,6 +165,7 @@ return [
         /*
          * Package Service Providers...
          */
+        SquareBoat\Sneaker\SneakerServiceProvider::class,
 
         /*
          * Application Service Providers...
