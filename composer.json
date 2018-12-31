@@ -19,7 +19,8 @@
         "fzaninotto/faker": "^1.4",
         "mockery/mockery": "^1.0",
         "nunomaduro/collision": "^2.0",
-        "phpunit/phpunit": "^7.0"
+        "phpunit/phpunit": "^7.0",
+        "xethron/migrations-generator": "^2.0"
     },
     "config": {
         "optimize-autoloader": true,
@@ -38,13 +39,17 @@
         },
         "classmap": [
             "database/seeds",
-            "database/factories"
+            "database/factories",
+            "app/Jamiicare/Models"
         ]
     },
     "autoload-dev": {
         "psr-4": {
             "Tests\\": "tests/"
-        }
+        },
+        "files": [
+            "tests/utilities/helpers.php"
+        ]
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
