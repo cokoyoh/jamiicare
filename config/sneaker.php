@@ -38,7 +38,7 @@ return [
     */
 
     'to' => [
-        'cokoyoh.dev@gmail.com'
+        env('ADMIN_EMAIL')
     ],
 
     /*
