@@ -37,4 +37,9 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->hasMany(RoleUser::class);
     }
+
+    public function getFullnameAttribute()
+    {
+        return $this->firstname . ' ' . $this->lastname;
+    }
 }

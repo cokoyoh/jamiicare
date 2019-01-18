@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreAppointmentRequest;
 use Jamiicare\Appointments\AppointmentsRepository;
+use Jamiicare\Models\Appointment;
 
 class AppointmentsController extends Controller
 {
@@ -13,6 +14,16 @@ class AppointmentsController extends Controller
     public function __construct(AppointmentsRepository $appointmentsRepository)
     {
         $this->appointmentsRepository = $appointmentsRepository;
+    }
+
+
+    public function index()
+    {
+        $appointments = $this->appointmentsRepository->getUserAppointments();
+
+        return view('appointments.index', [
+            'appointments' => $appointments
+        ]);
     }
 
 

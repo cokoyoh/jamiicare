@@ -21,7 +21,7 @@ class AppointmentsTest extends TestCase
 
         $post = [
             'doctor_id' => $doctor->id,
-            'time' => Carbon::now()->format('H:i'),
+            'date' => Carbon::tomorrow()->toDateString(),
             'description' => 'Need to see the doc',
             'patient_id' => auth()->id(),
         ];
@@ -35,5 +35,19 @@ class AppointmentsTest extends TestCase
         $this->assertEquals($appointment->patient_id, auth()->id());
 
         $this->assertEquals($appointment->doctor_id, $doctor->id);
+    }
+
+    /** @test */
+    public function authorised_users_can_view_their_appointments()
+    {
+        $this->signUp();
+
+        $appointment = create(Appointment::class, [
+            'patient_id' => auth()->id()
+        ]);
+
+       $this->get(route('appointments'))
+             ->assertSee($appointment->title)
+             ->assertSee($appointment->present()->status);
     }
 }

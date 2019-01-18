@@ -24,4 +24,11 @@ class AppointmentsRepository
 
         return Appointment::create($input);
     }
+
+
+    public function getUserAppointments()
+    {
+        return Appointment::mine()
+            ->get();
+    }
 }

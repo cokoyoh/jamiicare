@@ -5,7 +5,8 @@ use Illuminate\Database\Seeder;
 class DatabaseSeeder extends Seeder
 {
     protected $seeders = [
-        RolesTableSeeder::class
+        RolesTableSeeder::class,
+        DoctorsTableSeeder::class
     ];
 
     /**
