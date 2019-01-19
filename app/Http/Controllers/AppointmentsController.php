@@ -61,4 +61,19 @@ class AppointmentsController extends Controller
             ->route('appointments')
             ->with('flash', $notification);
     }
+
+    public function approve(Appointment $appointment)
+    {
+        $this->appointmentsRepository->approve($appointment);
+
+        if (request()->wantsJson()) {
+            return response([
+                'message' => 'Appointment approved',
+            ], 200);
+        }
+
+        return redirect()
+            ->route('appointments')
+            ->with('flash', 'Appointment approved');
+    }
 }

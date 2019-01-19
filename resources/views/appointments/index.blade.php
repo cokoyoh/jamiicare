@@ -21,6 +21,7 @@
                     <th scope = "col">Date</th>
                     <th scope = "col">Type</th>
                     <th scope = "col">Status</th>
+                    <th scope = "col">Actions</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -31,6 +32,12 @@
                         <td>{!! $appointment->present()->appointmentDate !!}</td>
                         <td>{!! $appointment->present()->type !!}</td>
                         <td>{!! $appointment->present()->status !!}</td>
+                        <td class="action">
+                            <i class="far fa-eye" data-toggle = "modal" :data-target = "'#approveAppointmentModal' + {!! $appointment->id !!}"></i>
+                            <i class="far fa-edit"></i>
+                            <i class="far fa-eye"></i>
+                        </td>
+                        <approve appointment_id="{!! $appointment->id !!}"></approve>
                     </tr>
                 @endforeach
                 </tbody>

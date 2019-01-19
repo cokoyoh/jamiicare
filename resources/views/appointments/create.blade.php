@@ -11,11 +11,11 @@
             <div class="form-group d-flex form_radio">
                 <div class="form_radio_option">
                     {!! Form::label('Economy', null) !!}
-                    {!! Form::radio('appointment_type', 1, true); !!}
+                    {!! Form::radio('appointment_type_id', 1, true); !!}
                 </div>
                 <div class="form_radio_option">
                     {!! Form::label('Executive', null) !!}
-                    {!! Form::radio('appointment_type', 2); !!}
+                    {!! Form::radio('appointment_type_id', 2); !!}
                 </div>
             </div>
             <div class="form-group">

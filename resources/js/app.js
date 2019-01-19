@@ -5,9 +5,9 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./bootstrap');
-
 window.Vue = require('vue');
+
+require('./bootstrap');
 
 /**
  * The following block of code may be used to automatically register your
@@ -19,6 +19,7 @@ window.Vue = require('vue');
 
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
 Vue.component('flash', require('./components/Flash.vue'));
+Vue.component('approve', require('./components/Approve.vue'));
 
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key)))
@@ -32,9 +33,3 @@ Vue.component('flash', require('./components/Flash.vue'));
 const app = new Vue({
     el: '#app'
 });
-
-window.events = new Vue();
-
-window.flash = function(message) {
-    window.events.$emit('flash', message);
-};
