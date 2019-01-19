@@ -42,4 +42,9 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->firstname . ' ' . $this->lastname;
     }
+
+    public function doctor()
+    {
+        return $this->hasOne(Doctor::class);
+    }
 }

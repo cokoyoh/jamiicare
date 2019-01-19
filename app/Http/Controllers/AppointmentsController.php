@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreAppointmentRequest;
 use Jamiicare\Appointments\AppointmentsRepository;
 use Jamiicare\Models\Appointment;
+use Jamiicare\Models\User;
 
 class AppointmentsController extends Controller
 {
@@ -35,8 +36,11 @@ class AppointmentsController extends Controller
             $appointment = new Appointment();
         }
 
+        $doctors = ['' => 'Select Doctor'] + User::has('doctor')->pluck('firstname', 'id')->toArray();
+
         return view('appointments.create', [
-            'appointment' => $appointment
+            'appointment' => $appointment,
+            'doctors' => $doctors
         ]);
     }
 

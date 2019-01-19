@@ -26,7 +26,9 @@ class StoreAppointmentRequest extends FormRequest
         return [
             'doctor_id' => 'required',
             'patient_id' => 'required',
-            'date' => 'required'
+            'date' => 'required',
+            'title' => 'required',
+            'description' => 'required'
         ];
     }
 }

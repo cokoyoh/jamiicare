@@ -11663,6 +11663,19 @@ a.text-dark:focus {
   color: #000;
 }
 
+.form_label {
+  margin-left: -12px;
+  padding-bottom: inherit;
+}
+
+.form_radio {
+  margin-bottom: auto;
+}
+
+.form_radio .form_radio_option {
+  margin-right: 1.5em;
+}
+
 .navbar-laravel {
   background-color: #fff;
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
