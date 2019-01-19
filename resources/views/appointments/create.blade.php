@@ -5,6 +5,9 @@
         <div class = "container justify-content-around">
             <h3>Add/Edit Appointment</h3>
             {!! Form::model($appointment, ['route' => ['appointments.store', $appointment->id]]) !!}
+
+            @include('partials.errors')
+
             <div class="form-group d-flex form_radio">
                 <div class="form_radio_option">
                     {!! Form::label('Economy', null) !!}
@@ -26,13 +29,13 @@
             </div>
 
             <div class="form-group">
-                {!! Form::label('Title', null, ['class' => 'col-md-8 col-form-label form_label', 'required']) !!}
-                {!! Form::text('title', null, ['class' => 'form-control col-md-8', 'autocomplete' => 'off']) !!}
+                {!! Form::label('Title', null, ['class' => 'col-md-8 col-form-label form_label']) !!}
+                {!! Form::text('title', null, ['class' => 'form-control col-md-8', 'autocomplete' => 'off', 'required']) !!}
             </div>
 
             <div class="form-group">
                 {!! Form::label('Description', null, ['class' => 'col-md-8 col-form-label form_label']) !!}
-                {!! Form::textarea('description', null, ['rows' => 3, 'class' => 'form-control col-md-8', 'required' ]) !!}
+                {!! Form::textarea('description', null, ['rows' => 3, 'class' => 'form-control col-md-8']) !!}
             </div>
 
             <div class="form-group">
