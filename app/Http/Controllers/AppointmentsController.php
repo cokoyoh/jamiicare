@@ -27,6 +27,20 @@ class AppointmentsController extends Controller
     }
 
 
+    public function create($id = null)
+    {
+        if ($id) {
+            $appointment = $this->appointmentsRepository->getAppointmentsById($id);
+        } else {
+            $appointment = new Appointment();
+        }
+
+        return view('appointments.create', [
+            'appointment' => $appointment
+        ]);
+    }
+
+
     public function store(StoreAppointmentRequest $request, $id = null)
     {
         $this->appointmentsRepository->save($request->validated(), $id);
@@ -39,6 +53,8 @@ class AppointmentsController extends Controller
             ], 200);
         }
 
-        return back()->with('flash', $notification);
+        return redirect()
+            ->route('appointments')
+            ->with('flash', $notification);
     }
 }

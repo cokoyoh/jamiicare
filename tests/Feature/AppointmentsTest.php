@@ -19,14 +19,9 @@ class AppointmentsTest extends TestCase
 
         $doctor = create(Doctor::class);
 
-        $post = [
-            'doctor_id' => $doctor->id,
-            'date' => Carbon::tomorrow()->toDateString(),
-            'description' => 'Need to see the doc',
-            'patient_id' => auth()->id(),
-        ];
+        $post = make(Appointment::class, ['patient_id' => auth()->id(), 'doctor_id' => $doctor->id])->toArray();
 
-        $this->post(route('appointments.store'), $post);
+        $response = $this->post(route('appointments.store'), $post);
 
         $this->assertCount(1, Appointment::all());
 
@@ -35,6 +30,8 @@ class AppointmentsTest extends TestCase
         $this->assertEquals($appointment->patient_id, auth()->id());
 
         $this->assertEquals($appointment->doctor_id, $doctor->id);
+
+        $response->assertRedirect(route('appointments'));
     }
 
     /** @test */

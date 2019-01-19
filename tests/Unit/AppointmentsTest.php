@@ -42,9 +42,9 @@ class AppointmentsTest extends TestCase
     /** @test */
     public function it_shows_the_status_of_an_appointment()
     {
-        $pendingAppointment = createState(Appointment::class, [], 'pending');
+        $pendingAppointment = state(Appointment::class, [], 'pending');
 
-        $approvedAppointment = createState(Appointment::class, [], 'approved');
+        $approvedAppointment = state(Appointment::class, [], 'approved');
 
         $this->assertEquals($pendingAppointment->present()->status, 'Pending');
 

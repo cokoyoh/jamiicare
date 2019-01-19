@@ -3,12 +3,15 @@
 @section('content')
     <div class = "container">
         <div class = "row">
-           <div class="col-md-8"> <h3>Appointments</h3></div>
-            <div class="col-md-4">
-                <button type = "button"
-                        class = "btn btn-sm btn-outline-success float-right">
-                    Add New
-                </button>
+            <div class = "col-md-8"><h3>Appointments</h3></div>
+            <div class = "col-md-4">
+                <a href = "{!! route('appointments.create') !!}">
+                    <button type = "button"
+                            class = "btn btn-sm btn-outline-success float-right"
+                    >
+                        Add New
+                    </button>
+                </a>
             </div>
             <table class = "table table-hover">
                 <thead>
