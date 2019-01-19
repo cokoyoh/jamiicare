@@ -31,4 +31,9 @@ class AppointmentsPresenter extends Presenter
     {
         return $this->approved_at ? 'Approved' : 'Pending';
     }
+
+    public function type()
+    {
+        return $this->entity->appointmentType->name;
+    }
 }

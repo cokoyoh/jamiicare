@@ -4,6 +4,7 @@ namespace Tests\Unit;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Jamiicare\Models\Appointment;
+use Jamiicare\Models\AppointmentType;
 use Jamiicare\Models\Doctor;
 use Tests\TestCase;
 
@@ -49,5 +50,13 @@ class AppointmentsTest extends TestCase
         $this->assertEquals($pendingAppointment->present()->status, 'Pending');
 
         $this->assertEquals($approvedAppointment->present()->status, 'Approved');
+    }
+
+    /** @test */
+    public function it_belongs_to_an_appointment_type()
+    {
+        $appointment = create(Appointment::class);
+
+        $this->assertInstanceOf(AppointmentType::class, $appointment->appointmentType);
     }
 }

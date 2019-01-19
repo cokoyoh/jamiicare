@@ -17,6 +17,7 @@ class CreateAppointmentsTable extends Migration {
 			$table->integer('id', true);
 			$table->integer('patient_id')->nullable()->index('fk_appointments_users1_idx');
 			$table->integer('doctor_id')->nullable()->index('fk_appointments_doctors1_idx');
+			$table->integer('appointment_type_id')->nullable()->index('fk_appointments_appointment_types1_idx');
 			$table->date('date')->nullable();
 			$table->string('title')->nullable();
 			$table->text('description')->nullable();

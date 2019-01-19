@@ -19,6 +19,7 @@
                     <th scope = "col">Title</th>
                     <th scope = "col">Doctor</th>
                     <th scope = "col">Date</th>
+                    <th scope = "col">Type</th>
                     <th scope = "col">Status</th>
                 </tr>
                 </thead>
@@ -28,6 +29,7 @@
                         <th scope = "row">{!! $appointment->title !!}</th>
                         <td>{!! $appointment->present()->doctor !!}</td>
                         <td>{!! $appointment->present()->appointmentDate !!}</td>
+                        <td>{!! $appointment->present()->type !!}</td>
                         <td>{!! $appointment->present()->status !!}</td>
                     </tr>
                 @endforeach
