@@ -41,8 +41,9 @@
 <style lang="sass">
     .sharper-footer
         padding: 60px 0 60px
-        background-color: #222222
+        /*background-color: #222222*/
         color: #fff
+        background-image: linear-gradient(to right, #000428, #004e92)
 
         .social
             height: 30px

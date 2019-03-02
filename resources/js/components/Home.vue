@@ -3,6 +3,8 @@
         <home-header></home-header>
         <snap-details></snap-details>
         <team></team>
+        <about></about>
+        <contact-us></contact-us>
         <home-footer></home-footer>
 
     </div>
@@ -11,7 +13,7 @@
 <script>
     export default {
         mounted() {
-            console.log('Home component mounted.')
+            console.log('Home component mounted at mount')
         }
     }
 </script>

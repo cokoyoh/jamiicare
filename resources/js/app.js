@@ -27,6 +27,7 @@ Vue.component('about', require('./components/home/About'));
 Vue.component('home-header', require('./components/home/Header'));
 Vue.component('snap-details', require('./components/home/SnapDetails'));
 Vue.component('team', require('./components/home/Team'));
+Vue.component('contact-us', require('./components/home/Contact'));
 Vue.component('home-footer', require('./components/home/Footer'));
 
 // const files = require.context('./', true, /\.vue$/i)
