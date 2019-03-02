@@ -32,16 +32,23 @@ class Appointment extends Model
 
     public function scopeMine($query)
     {
-        return $query->where('patient_id', auth()->id());
+        return $query
+            ->where('patient_id', auth()->id())
+            ->orWhere('doctor_id', auth()->user()->doctor->id);
     }
 
     public function doctor()
     {
-        return $this->belongsTo(Doctor::class);
+        return $this->belongsTo(Doctor::class, 'doctor_id');
     }
 
     public function appointmentType()
     {
         return $this->belongsTo(AppointmentType::class);
+    }
+
+    public function patient()
+    {
+        return $this->belongsTo(User::class, 'patient_id');
     }
 }

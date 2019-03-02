@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-lg-4 col-md-4">
                     <h2>3+</h2>
-                    <h4 class="center">Years we've been in business</h4>
+                    <h4 class="center">Months we've been in business</h4>
                 </div>
                 <div class="col-lg-4 col-md-4">
                     <h2>50+</h2>

@@ -31,7 +31,7 @@
                             </div>
                             <div class="col-lg-6 col-md-6">
                                 <div class="input-group wow fadeInUp" data-wow-delay="2.0s">
-                                <textarea class="form-control" cols="80" rows="6" name="message" required
+                                <textarea class="form-control" cols="80" rows="7" name="message" required
                                           placeholder="Write message here..."></textarea>
                                 </div>
                                 <button class="btn btn-success btn-lg btn-block wow fadeInUp"  data-wow-delay="2.4s" name="send">Send Message</button>

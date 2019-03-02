@@ -4,6 +4,7 @@ namespace Jamiicare\Appointments;
 
 use Carbon\Carbon;
 use Jamiicare\Models\Appointment;
+use Jamiicare\Models\Doctor;
 
 class AppointmentsRepository
 {
@@ -15,6 +16,8 @@ class AppointmentsRepository
 
     public function save($input, $id = null)
     {
+        $input['doctor_id'] = $this->getDoctorId($input['doctor_id']);
+
         if ($id) {
             $appointment = $this->getAppointmentsById($id);
 
@@ -38,5 +41,12 @@ class AppointmentsRepository
         $appointment->update([
             'approved_at' => Carbon::now()
         ]);
+    }
+
+    private function getDoctorId($userId)
+    {
+        return Doctor::where('user_id', $userId)
+            ->first()
+            ->id;
     }
 }

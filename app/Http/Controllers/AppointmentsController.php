@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\Appointments\AppointmentRaised;
 use App\Http\Requests\StoreAppointmentRequest;
+use Illuminate\Support\Facades\DB;
 use Jamiicare\Appointments\AppointmentsRepository;
 use Jamiicare\Models\Appointment;
 use Jamiicare\Models\User;
@@ -47,7 +49,14 @@ class AppointmentsController extends Controller
 
     public function store(StoreAppointmentRequest $request, $id = null)
     {
-        $this->appointmentsRepository->save($request->validated(), $id);
+        DB::transaction(function () use ($request, $id)
+        {
+            $appointment = $this->appointmentsRepository->save($request->validated(), $id);
+
+            if ($appointment) {
+                event(new AppointmentRaised($appointment));
+            }
+        });
 
         $notification = 'Appointment saved successfully';
 

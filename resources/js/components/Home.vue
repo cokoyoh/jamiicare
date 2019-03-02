@@ -6,7 +6,6 @@
         <about></about>
         <contact-us></contact-us>
         <home-footer></home-footer>
-
     </div>
 </template>
 

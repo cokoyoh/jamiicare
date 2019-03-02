@@ -36,4 +36,9 @@ class AppointmentsPresenter extends Presenter
     {
         return $this->entity->appointmentType->name;
     }
+
+    public function patient()
+    {
+        return $this->entity->patient->fullname;
+    }
 }

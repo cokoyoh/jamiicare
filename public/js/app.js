@@ -48390,7 +48390,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     mounted: function mounted() {
@@ -49313,7 +49312,7 @@ var staticRenderFns = [
               _c("h2", [_vm._v("3+")]),
               _vm._v(" "),
               _c("h4", { staticClass: "center" }, [
-                _vm._v("Years we've been in business")
+                _vm._v("Months we've been in business")
               ])
             ]),
             _vm._v(" "),
@@ -50375,7 +50374,7 @@ var staticRenderFns = [
                           staticClass: "form-control",
                           attrs: {
                             cols: "80",
-                            rows: "6",
+                            rows: "7",
                             name: "message",
                             required: "",
                             placeholder: "Write message here..."
