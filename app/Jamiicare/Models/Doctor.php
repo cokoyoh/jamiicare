@@ -13,4 +13,9 @@ class Doctor extends Model
         'user_id',
         'moh_number'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

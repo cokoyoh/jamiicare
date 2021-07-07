@@ -33,7 +33,9 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('appointments') }}">Appointments</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -71,9 +73,9 @@
                 </div>
             </div>
         </nav>
-
         <main class="py-4">
             @yield('content')
+            <flash message="{!! session('flash') !!}"></flash>
         </main>
     </div>
 </body>

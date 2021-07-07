@@ -2,6 +2,7 @@
 
 namespace Jamiicare\Appointments;
 
+use Carbon\Carbon;
 use Jamiicare\Models\Appointment;
 
 class AppointmentsRepository
@@ -23,5 +24,19 @@ class AppointmentsRepository
         }
 
         return Appointment::create($input);
+    }
+
+
+    public function getUserAppointments()
+    {
+        return Appointment::mine()
+            ->get();
+    }
+
+    public function approve(Appointment $appointment)
+    {
+        $appointment->update([
+            'approved_at' => Carbon::now()
+        ]);
     }
 }

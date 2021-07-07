@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreatePatientsTable extends Migration {
+class CreateAppointmentTypesTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,10 +12,10 @@ class CreatePatientsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('patients', function(Blueprint $table)
+		Schema::create('appointment_types', function(Blueprint $table)
 		{
 			$table->integer('id', true);
-			$table->integer('user_id')->nullable();
+			$table->string('name', 45)->nullable();
 			$table->timestamps();
 			$table->softDeletes();
 		});
@@ -29,7 +29,7 @@ class CreatePatientsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('patients');
+		Schema::drop('appointment_types');
 	}
 
 }

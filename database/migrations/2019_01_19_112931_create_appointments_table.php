@@ -15,10 +15,15 @@ class CreateAppointmentsTable extends Migration {
 		Schema::create('appointments', function(Blueprint $table)
 		{
 			$table->integer('id', true);
-			$table->integer('patient_id')->nullable()->index('fk_appointments_patients1_idx');
+			$table->integer('patient_id')->nullable()->index('fk_appointments_users1_idx');
 			$table->integer('doctor_id')->nullable()->index('fk_appointments_doctors1_idx');
-			$table->time('time')->nullable();
+			$table->integer('appointment_type_id')->nullable()->index('fk_appointments_appointment_types1_idx');
+			$table->date('date')->nullable();
+			$table->string('title')->nullable();
+			$table->text('description')->nullable();
+			$table->dateTime('approved_at')->nullable();
 			$table->timestamps();
+			$table->softDeletes();
 		});
 	}
 

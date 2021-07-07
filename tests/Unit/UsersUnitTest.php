@@ -22,4 +22,12 @@ class UsersUnitTest extends TestCase
 
         $this->assertCount(1, User::all());
     }
+
+    /** @test */
+    public function it_returns_the_full_name_of_the_user()
+    {
+        $user = create(User::class);
+
+        $this->assertEquals($user->fullname, $user->firstname . ' '. $user->lastname);
+    }
 }

@@ -5,9 +5,9 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./bootstrap');
-
 window.Vue = require('vue');
+
+require('./bootstrap');
 
 /**
  * The following block of code may be used to automatically register your
@@ -18,6 +18,16 @@ window.Vue = require('vue');
  */
 
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
+Vue.component('home', require('./components/Home.vue'));
+Vue.component('flash', require('./components/Flash.vue'));
+Vue.component('approve', require('./components/Approve.vue'));
+
+//Home components
+Vue.component('about', require('./components/home/About'));
+Vue.component('home-header', require('./components/home/Header'));
+Vue.component('snap-details', require('./components/home/SnapDetails'));
+Vue.component('team', require('./components/home/Team'));
+Vue.component('home-footer', require('./components/home/Footer'));
 
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key)))
